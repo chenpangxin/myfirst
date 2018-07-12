@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src = "{{url_for('static',filename='jquery-3.3.1.js')}}"></script>
+<script>
+        var data = {
+            'name':'chen',
+            'password':'chen'
+        }
+        $.ajax({
+            type:'POST',
+            url:'{{url_for("logintest.login")}}',
+            data:data,
+            datatype:'json',
+            success:function(data){
+                alert(JSON.stringfy(data));
+                console.log(data)
+            }
+        });
+        // $(".btn").click(function(){
+        //     $.ajax({url:'login',success:function(data){
+        //         alert("name:"+date.name+"pw:"+date.password);
+        //         }});
+        // });
+</script>
+</head>
+<body>
+<button class="btn">test</button>
+<form action='/login' method='post'>
+        <a>用户名： <input name='username' type='text'></a>
+        <br>
+        <a>密    码：<input name='password' type='password'></a>
+        <br>
+        <button type='submit'>Login </button>
+        <a href="./register">注册</a>
+</form>
+</body>
+</html>

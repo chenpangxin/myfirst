@@ -1,0 +1,29 @@
+ <table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>名称</th>
+        <th>抓包开始时间</th>
+        <th>抓包结束时间</th>
+        <th>抓包IP</th>
+        <th>抓包时长设置</th>
+        <th>抓包大小设置</th>
+        <th>pcap包大小</th>
+        <th>下载</th>
+    </tr>
+
+        {% for i in u %}
+            <tr>
+                <td>{{ i['_id'] }}</td>
+                <td>{{ i['taskName'] }}</td>
+                <td>{{ i['startTime'] }}</td>
+                <td>{{ i['endTime'] }}</td>
+                <td>{{ i['ip'] }}</td>
+                <td>{{ i['time'] }}</td>
+                <td>{{ i['size'] }}</td>
+                <td>{{ i['packSize'] }}</td>
+                <td>{{ i['download'] }}</td>
+		        <td><a href= http://172.31.50.236:8899/Download/{{i['download']}}> {{i['download']}}</a></td>
+            </tr>
+    {% endfor %}
+    </table>
+
