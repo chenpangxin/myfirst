@@ -1,6 +1,7 @@
 # coding:utf-8
 from  flask import Blueprint,render_template,redirect,url_for,request
 import re
+# 测试GIT操作
 test  = Blueprint('test',__name__)
 @test.route('/',methods=['GET','POST'])
 def index():
